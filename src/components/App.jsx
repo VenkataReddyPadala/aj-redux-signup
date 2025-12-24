@@ -6,14 +6,21 @@ import AppLayout from "./AppLayout";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/aj-redux-signup">
       <Routes>
         <Route path="/" element={<AppLayout />}>
           <Route index element={<Navigate to="signup" replace />} />
           <Route path="signup" element={<Signup />} />
           <Route path="profile" element={<Profile />} />
         </Route>
-        <Route path="*" element={<h1 className="content">404 Not Found</h1>} />
+        <Route
+          path="*"
+          element={
+            <h1 className="content" style={{ textAlign: "center" }}>
+              404 Not Found
+            </h1>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
